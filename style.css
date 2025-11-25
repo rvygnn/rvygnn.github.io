@@ -1,32 +1,92 @@
-@font-face {
-    font-family: "Space Grotesk";
-    src: url("SpaceGrotesk[wght].woff2") format("woff2");
-}
+
+
+
 
 *{
     box-sizing: border-box;
 }
 
 body{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(223, 223, 223);
     line-height: 1.3;
-    font-family: "Space Grotesk";
+    font-family: "pretendard", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     font-optical-sizing: auto;
+    overflow-x: hidden;
 }
 
+.grid {
+    width: auto;
+    height: auto;
+}
+
+
+a {
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+body a{
+    background-color: yellow;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    justify-items: stretch;
+    gap:12px;
+}
+
+.nav img{
+    width: 100%;
+}
+
+@media (min-width:640px) {
+        nav{
+            align-items: center;
+    }
+}
+
+@media (min-width:1024px) {
+        nav{
+            align-items: center;
+    }        
+}
+
+
 h1{
-    margin: 0;
+    margin: 500;
+    font-style: normal;
+}
+
+h2{
+    font-size: 20px;
+    max-width: 500px;
+    background-color: yellow;
+    font-style: normal;
 }
 
 img{
     max-width: 100%;
     height: auto;
+    object-fit: cover;
     display: block;
 }
 
 p{
-    max-width: 600px;
+    max-width: 500px;
+    background-color: yellow;
 }
+
+span{
+    margin: 1%;
+}
+
+
+
+
+
 
 
 /****
@@ -34,48 +94,234 @@ header
 ****/
 
 
+        .item{
+            grid-template-columns: auto auto auto;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 16px;
+            color: currentColor;
+
+        }
+
+        .gallery img {
+            height: auto;
+
+        }
+
+        .nav a span{
+            padding: 1px;
+            justify-content: start;
+
+        }
+
+        .item .item-easy{
+            justify-content: center;
+
+        }
+
+        .item a{
+            text-decoration: none;
+            color: currentColor;
+
+        }
+
+
+        .item img, .item .desc{
+            transition: opacity 0.3s;
+            background-color: rgb(0, 0, 0);
+        }
+
+
+        .item .desc{
+            opacity: 0;
+            background: #000;
+            padding: 12px;
+            border-radius: 3px;
+
+
+        }
+
+
+        .item:hover .desc{
+            opacity: 1;
+            z-index: 999;
+        }
+
+        .item:hover img{
+            opacity: 0.2;
+
+        }
+
+
+
 .header{
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(255, 61, 177);
+    padding: 5px 27px;
+    /*
+    position: sticky;
+    */
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
+
+footer{
+    text-decoration: none;
+    color: currentColor;
+    display: grid;
+    text-align: center;
+    padding: 12px;
+    background-color: rgb(255, 61, 177);
+    margin-top: 12px;
+}
+
+footer a{
+    text-decoration: none;
+    color: currentColor;
+    padding: 10px;
+}
+
+
+/*
+    @media (min-width:640px) {
+        div{
+
+        }
+    }
+        */
 
 .header a{
     text-decoration: none;
     color: currentColor;
 }
 
-.nav{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
-    justify-content: center;
-    gap: 10px;
+.header h1{
+    background-color: #000;
 }
-
-.nav a span{
-    padding: 12px;
-    display: block;
-}
-
-.nav a{
-    text-decoration: none;
-    color: currentColor;
-    background: #f1f1f1;
-}
-
 
 /****
 page projet
 ****/
 
 
-.projet{
-    background-color: rgb(106, 195, 255);
+
+
+
+.navi {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+
 }
 
-.projet h1{
-    font-size: 25px;
-    font-family: "Space Grotesk";
+.navi img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
 }
 
+/* Optionnel : pour un rendu identique à l’index */
+@media (min-width: 640px) {
+    .navi {
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .navi {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+
+.navi p{
+    justify-content: start;
+}
+
+.navi img{
+    width: auto;
+    height: auto;
+}
+
+
+
+
+
+
+
+.reliure {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+
+}
+
+.reliure img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Optionnel : pour un rendu identique à l’index */
+@media (min-width: 640px) {
+    .reliure {
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .reliure {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+
+
+
+.reliure p{
+    justify-content: start;
+}
+
+
+
+
+.rg {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 12px;
+
+}
+
+.rg img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    display: block;
+
+}
+
+/* Optionnel : pour un rendu identique à l’index */
+@media (min-width: 640px) {
+    .rg {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .rg {
+        grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+    }
+}
+
+
+.rg p{
+    justify-content: space-between;
+}
